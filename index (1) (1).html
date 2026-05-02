@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RPK Associates – Auditors & Tax Consultants in Bangalore. Expert GST, ITR filing, audit, accounting, and business registration services in Mahadevapura, Bangalore.">
+<meta name="keywords" content="GST registration Bangalore, ITR filing Bangalore, tax consultant Bangalore, CA Bangalore, accounting services Bangalore, tax consultant Mahadevapura">
+<title>RPK Associates | Auditors & Tax Consultants – Bangalore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E6C0;
+    --black: #0A0A0A;
+    --black-soft: #111111;
+    --black-mid: #1A1A1A;
+    --black-card: #161616;
+    --white: #F8F5EF;
+    --white-dim: #C8C5BE;
+    --border: rgba(201,168,76,0.2);
+    --border-strong: rgba(201,168,76,0.45);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+  .label { font-family: 'Syne', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+  /* GOLD RULE */
+  .gold-rule { width: 40px; height: 1px; background: var(--gold); margin: 1rem 0; }
+  .gold-rule.center { margin: 1rem auto; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.8rem;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
+  .logo-sub { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--white-dim);
+    font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    padding: 0.55rem 1.4rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    border-radius: 2px;
+    transition: all 0.3s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+  .nav-cta::after { display: none !important; }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 1.5px; background: var(--gold); transition: all 0.3s; display: block; }
+
+  /* MOBILE NAV */
+  .mobile-nav {
+    display: none;
+    position: fixed; top: 70px; left: 0; right: 0;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem;
+    z-index: 999;
+    flex-direction: column; gap: 1.5rem;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { text-decoration: none; color: var(--white-dim); font-family: 'Syne', sans-serif; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative;
+    padding: 8rem 4rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 70% 70% at 60% 50%, black 0%, transparent 80%);
+  }
+
+  .hero-content { position: relative; max-width: 700px; z-index: 2; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    background: rgba(201,168,76,0.05);
+  }
+  .hero-badge .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  h1.hero-title {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  h1.hero-title em { font-style: italic; color: var(--gold); }
+  h1.hero-title strong { font-weight: 700; display: block; }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--white-dim);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
+
+  .btn-primary {
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--black);
+    border: none; border-radius: 2px;
+    font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+
+  .btn-outline {
+    padding: 0.9rem 2rem;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(248,245,239,0.3); border-radius: 2px;
+    font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-item {}
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--gold); line-height: 1; }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); margin-top: 0.3rem; }
+
+  .hero-visual {
+    position: absolute; right: 4rem; top: 50%;
+    transform: translateY(-50%);
+    width: 380px; height: 380px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-circle {
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    position: relative;
+    animation: rotate 30s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+
+  .hero-circle::before {
+    content: '';
+    position: absolute; inset: 20px;
+    border-radius: 50%;
+    border: 1px dashed rgba(201,168,76,0.2);
+  }
+
+  .hero-circle-inner {
+    position: absolute; inset: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    border: 1px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center;
+    animation: rotate 30s linear infinite reverse;
+  }
+
+  .hero-r {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .orbit-dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: -4px; left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* SECTION COMMONS */
+  section { padding: 6rem 4rem; }
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-top: 0.5rem; }
+  .section-header h2 em { font-style: italic; color: var(--gold); }
+  .section-header p { color: var(--white-dim); max-width: 540px; margin: 1rem auto 0; line-height: 1.8; font-size: 0.95rem; }
+
+  /* SERVICES */
+  #services { background: var(--black-soft); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--black-card);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s;
+    text-decoration: none;
+    display: block;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transition: width 0.4s;
+  }
+
+  .service-card:hover { background: var(--black-mid); }
+  .service-card:hover::before { width: 100%; }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--gold);
+    transition: all 0.3s;
+  }
+  .service-card:hover .service-icon { background: rgba(201,168,76,0.1); }
+
+  .service-card h3 {
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--white); margin-bottom: 0.8rem;
+  }
+
+  .service-card p { font-size: 0.85rem; color: var(--white-dim); line-height: 1.7; margin-bottom: 1.5rem; }
+
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .service-tag {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--white-dim);
+    border-radius: 2px;
+  }
+
+  .service-arrow {
+    position: absolute; bottom: 2rem; right: 2rem;
+    color: var(--gold); font-size: 1.2rem;
+    opacity: 0; transform: translateX(-8px);
+    transition: all 0.3s;
+  }
+  .service-card:hover .service-arrow { opacity: 1; transform: translateX(0); }
+
+  /* WHY US */
+  #why-us { background: var(--black); }
+
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; max-width: 1200px; margin: 0 auto;
+    align-items: center;
+  }
+
+  .why-text h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300; line-height: 1.2;
+    margin: 0.8rem 0 1.5rem;
+  }
+  .why-text h2 em { font-style: italic; color: var(--gold); }
+  .why-text p { color: var(--white-dim); line-height: 1.9; margin-bottom: 2rem; }
+
+  .why-items { display: flex; flex-direction: column; gap: 1rem; }
+
+  .why-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  .why-item:hover { border-color: var(--border-strong); }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 700;
+    color: var(--gold); opacity: 0.4;
+    line-height: 1; min-width: 32px;
+  }
+
+  .why-item h4 { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; letter-spacing: 0.03em; }
+  .why-item p { font-size: 0.82rem; color: var(--white-dim); line-height: 1.7; }
+
+  .why-visual {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .credential-card {
+    background: var(--black-card);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .credential-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .credential-card .label { margin-bottom: 0.6rem; }
+  .credential-card h3 { font-size: 1.6rem; font-weight: 600; color: var(--white); }
+  .credential-card p { font-size: 0.82rem; color: var(--white-dim); margin-top: 0.4rem; }
+
+  /* CALCULATORS */
+  #calculators { background: var(--black-soft); }
+
+  .calc-tabs {
+    display: flex; justify-content: center; flex-wrap: wrap;
+    gap: 0.5rem; margin-bottom: 3rem;
+  }
+
+  .calc-tab {
+    padding: 0.6rem 1.4rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--white-dim);
+    font-family: 'Syne', sans-serif; font-size: 0.73rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .calc-tab.active, .calc-tab:hover {
+    border-color: var(--gold); color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .calc-panel {
+    display: none;
+    max-width: 700px; margin: 0 auto;
+    background: var(--black-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 4px;
+  }
+  .calc-panel.active { display: block; }
+
+  .calc-panel h3 { font-size: 1.6rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .calc-panel > p { font-size: 0.85rem; color: var(--white-dim); margin-bottom: 2rem; }
+
+  .calc-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  .calc-fields.single { grid-template-columns: 1fr; }
+
+  .field-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .field-group label { font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .field-group input, .field-group select {
+    background: var(--black-mid);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .field-group input:focus, .field-group select:focus { border-color: var(--gold); }
+  .field-group input::placeholder { color: rgba(200,197,190,0.35); }
+
+  .calc-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none; color: var(--black);
+    font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.3s; margin-bottom: 1.5rem;
+  }
+  .calc-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .calc-result {
+    background: var(--black-mid);
+    border: 1px solid var(--border-strong);
+    padding: 1.5rem;
+    border-radius: 4px;
+    display: none;
+  }
+  .calc-result.show { display: block; }
+  .calc-result .label { margin-bottom: 0.5rem; }
+  .result-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); }
+  .result-breakdown { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .result-row { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--white-dim); padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+  .result-row:last-child { border-bottom: none; color: var(--white); font-weight: 500; }
+
+  /* BOOK APPOINTMENT */
+  #appointment { background: var(--black); }
+
+  .appointment-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 4rem; max-width: 1100px; margin: 0 auto;
+  }
+
+  .appt-info { }
+  .appt-info h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; margin: 0.8rem 0 1.5rem; }
+  .appt-info h2 em { font-style: italic; color: var(--gold); }
+  .appt-info p { color: var(--white-dim); line-height: 1.9; margin-bottom: 2rem; }
+
+  .appt-steps { display: flex; flex-direction: column; gap: 1rem; }
+  .appt-step { display: flex; align-items: center; gap: 1rem; }
+  .step-num { width: 32px; height: 32px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+  .appt-step p { font-size: 0.85rem; color: var(--white-dim); }
+
+  .appt-form {
+    background: var(--black-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .appt-form::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-row.single { grid-template-columns: 1fr; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .form-group input, .form-group select, .form-group textarea {
+    background: var(--black-mid);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    border-radius: 2px; outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(200,197,190,0.35); }
+  .form-group select option { background: var(--black-mid); }
+
+  .form-submit {
+    width: 100%; margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none; color: var(--black);
+    font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.25); }
+
+  .form-success {
+    display: none;
+    text-align: center; padding: 2rem;
+  }
+  .form-success.show { display: block; }
+  .form-success .checkmark { font-size: 3rem; margin-bottom: 1rem; }
+  .form-success h3 { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; }
+  .form-success p { color: var(--white-dim); font-size: 0.88rem; }
+
+  /* BLOG */
+  #blog { background: var(--black-soft); }
+
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px; background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .blog-card {
+    background: var(--black-card);
+    padding: 2rem;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  .blog-card:hover { background: var(--black-mid); }
+
+  .blog-date { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .blog-card h3 { font-size: 1.15rem; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 0.8rem; }
+  .blog-card p { font-size: 0.82rem; color: var(--white-dim); line-height: 1.7; }
+  .blog-read { margin-top: 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
+
+  /* ABOUT */
+  #about { background: var(--black); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 5rem; max-width: 1100px; margin: 0 auto;
+    align-items: start;
+  }
+
+  .about-text h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin: 0.8rem 0 1.5rem; line-height: 1.2; }
+  .about-text h2 em { font-style: italic; color: var(--gold); }
+  .about-text p { color: var(--white-dim); line-height: 1.9; margin-bottom: 1.2rem; font-size: 0.95rem; }
+
+  .about-mission {
+    background: var(--black-card);
+    border-left: 2px solid var(--gold);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .about-mission p { color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; line-height: 1.7; margin: 0; }
+
+  .about-card {
+    background: var(--black-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at top, rgba(201,168,76,0.05) 0%, transparent 60%);
+  }
+
+  .about-avatar {
+    width: 100px; height: 100px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: var(--black);
+    position: relative; z-index: 1;
+  }
+
+  .about-name { font-size: 1.5rem; font-weight: 600; color: var(--white); position: relative; z-index: 1; }
+  .about-title { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin: 0.4rem 0 1.5rem; position: relative; z-index: 1; }
+  .about-desc { font-size: 0.85rem; color: var(--white-dim); line-height: 1.7; position: relative; z-index: 1; }
+
+  .about-credentials { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; position: relative; z-index: 1; }
+  .cred-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; color: var(--white-dim); }
+  .cred-item span:first-child { color: var(--gold); }
+
+  /* CONTACT */
+  #contact { background: var(--black-soft); }
+
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: 4rem; max-width: 1100px; margin: 0 auto;
+  }
+
+  .contact-info h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; margin: 0.8rem 0 1.5rem; }
+  .contact-info h2 em { font-style: italic; color: var(--gold); }
+  .contact-info p { color: var(--white-dim); line-height: 1.8; margin-bottom: 2rem; font-size: 0.92rem; }
+
+  .contact-items { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; }
+
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    text-decoration: none;
+  }
+  .contact-item:hover { border-color: var(--border-strong); }
+
+  .contact-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1rem; flex-shrink: 0;
+  }
+
+  .contact-item-text .contact-label { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .contact-item-text p { font-size: 0.88rem; color: var(--white); }
+  .contact-item-text small { font-size: 0.78rem; color: var(--white-dim); }
+
+  .map-container {
+    margin-top: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 200px;
+  }
+  .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(1) contrast(0.85); }
+
+  .contact-form-wrap {
+    background: var(--black-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 4px;
+    position: relative; overflow: hidden;
+  }
+  .contact-form-wrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  .contact-form-wrap h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .contact-form-wrap > p { font-size: 0.85rem; color: var(--white-dim); margin-bottom: 1.8rem; }
+
+  /* CLIENT PORTAL */
+  #portal { background: var(--black); }
+
+  .portal-container {
+    max-width: 800px; margin: 0 auto;
+    background: var(--black-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .portal-header {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+
+  .portal-icon { font-size: 2rem; color: var(--gold); }
+  .portal-header h3 { font-size: 1.5rem; font-weight: 600; }
+  .portal-header p { font-size: 0.82rem; color: var(--white-dim); margin-top: 0.2rem; }
+
+  .portal-login, .portal-dashboard { padding: 2.5rem; }
+  .portal-dashboard { display: none; }
+
+  .portal-login p { color: var(--white-dim); font-size: 0.88rem; margin-bottom: 1.8rem; }
+
+  .upload-zone {
+    border: 2px dashed var(--border-strong);
+    border-radius: 4px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .upload-zone:hover { border-color: var(--gold); background: rgba(201,168,76,0.03); }
+  .upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .upload-zone .upload-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem; }
+  .upload-zone h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .upload-zone p { font-size: 0.8rem; color: var(--white-dim); }
+
+  .doc-types { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+  .doc-type-tag {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.72rem; color: var(--white-dim);
+    font-family: 'Syne', sans-serif; letter-spacing: 0.06em;
+  }
+
+  .uploaded-list { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .uploaded-item { display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 1rem; background: var(--black-mid); border-radius: 2px; font-size: 0.82rem; color: var(--white-dim); }
+  .uploaded-item .file-name { display: flex; align-items: center; gap: 0.5rem; color: var(--white); }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--black-card), var(--black-mid));
+    border: 1px solid var(--border-strong);
+    padding: 5rem 4rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 60%);
+  }
+
+  .cta-banner h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; margin: 0.8rem auto 1.5rem; max-width: 600px; position: relative; z-index: 1; }
+  .cta-banner h2 em { font-style: italic; color: var(--gold); }
+  .cta-banner p { color: var(--white-dim); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.8; position: relative; z-index: 1; }
+  .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 1; }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 4rem 4rem 2rem;
+  }
+
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem; margin-bottom: 3rem;
+  }
+
+  .footer-brand .logo-name { font-size: 1.1rem; }
+  .footer-brand p { font-size: 0.82rem; color: var(--white-dim); line-height: 1.8; margin: 1rem 0; max-width: 280px; }
+
+  .footer-col h4 { font-family: 'Syne', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-col ul a { text-decoration: none; color: var(--white-dim); font-size: 0.85rem; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--gold); }
+
+  .footer-contact { display: flex; flex-direction: column; gap: 0.8rem; }
+  .footer-contact-item { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.82rem; color: var(--white-dim); }
+  .footer-contact-item span:first-child { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem; color: rgba(200,197,190,0.5);
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-btn {
+    position: fixed; bottom: 2rem; right: 2rem;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none;
+    z-index: 998;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    transition: all 0.3s;
+    animation: floatUp 0.5s ease 1s both;
+  }
+  @keyframes floatUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
+
+  .whatsapp-tooltip {
+    position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+    background: var(--black-card); border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem; border-radius: 2px;
+    font-size: 0.72rem; color: var(--white); white-space: nowrap;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s;
+  }
+  .whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* SCROLL PROGRESS */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0;
+    height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    z-index: 1001; width: 0%;
+    transition: width 0.1s;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 5rem 2rem; }
+    #home { padding: 7rem 2rem 4rem; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .appointment-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4rem 1.5rem; }
+    #home { padding: 6rem 1.5rem 3rem; }
+    nav { padding: 1rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .calc-fields { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    footer { padding: 3rem 1.5rem 2rem; }
+    .cta-banner { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <div class="logo-mark">R</div>
+    <div class="logo-text">
+      <span class="logo-name">RPK Associates</span>
+      <span class="logo-sub">Auditors & Tax Consultants</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#calculators">Calculators</a></li>
+    <li><a href="#blog">Tax Updates</a></li>
+    <li><a href="#portal">Client Portal</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#appointment" class="nav-cta">Book Consultation</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#calculators" onclick="closeMenu()">Calculators</a>
+  <a href="#blog" onclick="closeMenu()">Tax Updates</a>
+  <a href="#portal" onclick="closeMenu()">Client Portal</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#appointment" onclick="closeMenu()" style="color:var(--gold)">📅 Book Consultation</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content fade-up">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      <span class="label" style="margin:0">Bangalore's Trusted Audit and Tax consulting Firm</span>
+    </div>
+    <h1 class="hero-title">
+      <em>Professional</em>
+      <strong>Tax & Financial</strong>
+      Expertise
+    </h1>
+    <p class="hero-desc">
+      RPK Associates delivers expert internal audit, taxation, accounting, GST compliance, and business advisory services from the heart of Mahadevapura, Bangalore. Your financial clarity starts here.
+    </p>
+    <div class="hero-actions">
+      <a href="#appointment" class="btn-primary">📅 Book Consultation</a>
+      <a href="#services" class="btn-outline">Explore Services →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Core Services</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Compliance Rate</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-circle">
+      <div class="orbit-dot"></div>
+      <div class="hero-circle-inner">
+        <div class="hero-r">R</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header fade-up">
+    <div class="label">Our Expertise</div>
+    <h2>Comprehensive <em>Financial Services</em></h2>
+    <p>From GST registration to complex audits, we handle every aspect of your financial compliance in Bangalore.</p>
+  </div>
+  <div class="services-grid fade-up">
+
+    <a href="#appointment" class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Audit & Assurance</h3>
+      <p>Comprehensive internal and statutory audits ensuring complete transparency and regulatory compliance for your business.</p>
+      <div class="service-tags">
+        <span class="service-tag">Internal Audit</span>
+        <span class="service-tag">Financial Audit</span>
+        <span class="service-tag">Risk Assessment</span>
+      </div>
+      <span class="service-arrow">→</span>
+    </a>
+
+    <a href="#appointment" class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Income Tax Filing</h3>
+      <p>Expert ITR filing for individuals and businesses. Tax planning and optimization under all applicable sections including 80C, 80D and more.</p>
+      <div class="service-tags">
+        <span class="service-tag">ITR Filing</span>
+        <span class="service-tag">Tax Planning</span>
+        <span class="service-tag">80C Savings</span>
+      </div>
+      <span class="service-arrow">→</span>
+    </a>
+
+    <a href="#appointment" class="service-card">
+      <div class="service-icon">🧾</div>
+      <h3>GST Compliance</h3>
+      <p>End-to-end GST services including registration, return filing, reconciliation and advisory for businesses of all sizes in Bangalore.</p>
+      <div class="service-tags">
+        <span class="service-tag">GST Registration</span>
+        <span class="service-tag">Return Filing</span>
+        <span class="service-tag">GST Advisory</span>
+      </div>
+      <span class="service-arrow">→</span>
+    </a>
+
+    <a href="#appointment" class="service-card">
+      <div class="service-icon">📚</div>
+      <h3>Accounting Services</h3>
+      <p>Professional bookkeeping, financial statement preparation, ledger maintenance and comprehensive business financial reporting.</p>
+      <div class="service-tags">
+        <span class="service-tag">Bookkeeping</span>
+        <span class="service-tag">P&L Statements</span>
+        <span class="service-tag">Ledger Mgmt</span>
+      </div>
+      <span class="service-arrow">→</span>
+    </a>
+
+    <a href="#appointment" class="service-card">
+      <div class="service-icon">🏛️</div>
+      <h3>Registrations & Licensing</h3>
+      <p>Seamless business registration services including Proprietorship, Partnership, MSME, Startup India and all statutory licenses.</p>
+      <div class="service-tags">
+        <span class="service-tag">MSME</span>
+        <span class="service-tag">Proprietorship</span>
+        <span class="service-tag">Startup Advisory</span>
+      </div>
+      <span class="service-arrow">→</span>
+    </a>
+
+    <a href="#appointment" class="service-card">
+      <div class="service-icon">💼</div>
+      <h3>Financial Advisory</h3>
+      <p>Strategic financial planning, business advisory, tax optimization guidance and compliance consulting for sustainable growth.</p>
+      <div class="service-tags">
+        <span class="service-tag">Financial Planning</span>
+        <span class="service-tag">Business Advisory</span>
+        <span class="service-tag">Tax Optimization</span>
+      </div>
+      <span class="service-arrow">→</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="why-grid">
+    <div class="why-text fade-up">
+      <div class="label">Why RPK Associates</div>
+      <h2>Trusted Financial <em>Guidance</em> You Can Rely On</h2>
+      <p>We combine deep expertise with personalized service to help individuals and businesses navigate India's complex tax and financial regulations with confidence.</p>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Deep Local Expertise</h4>
+            <p>Based in Mahadevapura, Bangalore – we understand the local business environment and regulatory nuances that affect your finances.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>End-to-End Compliance</h4>
+            <p>From GST registration to complex audits, we manage the entire compliance lifecycle so you can focus on growing your business.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Transparent & Timely</h4>
+            <p>We deliver work on time, every time. No surprises – just clear communication and professional delivery of all engagements.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Client-First Approach</h4>
+            <p>Your financial success is our priority. We tailor our advice to your specific situation, not a one-size-fits-all template.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual fade-up">
+      <div class="credential-card">
+        <div class="label">Proprietor</div>
+        <h3>R. Praveen Kumar</h3>
+        <p>Audit & Tax Consultant with over a decade of experience serving businesses and individuals across Bangalore.</p>
+      </div>
+      <div class="credential-card">
+        <div class="label">Office Location</div>
+        <h3>Mahadevapura</h3>
+        <p>306, Propulsive Passion, 4th Cross, Mahadevapura, Bangalore – 560016</p>
+      </div>
+      <div class="credential-card">
+        <div class="label">Practice Areas</div>
+        <h3>AUDIT · ITR · GST</h3>
+        <p>Licensed and registered with all applicable regulatory bodies. Serving clients across IT, manufacturing, retail and service sectors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATORS -->
+<section id="calculators">
+  <div class="section-header fade-up">
+    <div class="label">Free Tools</div>
+    <h2>Tax <em>Calculators</em></h2>
+    <p>Estimate your tax liability instantly. These tools are for guidance; consult us for precise filing and planning.</p>
+  </div>
+  <div class="calc-tabs fade-up">
+    <button class="calc-tab active" onclick="switchCalc('income')">Income Tax</button>
+    <button class="calc-tab" onclick="switchCalc('gst')">GST</button>
+    <button class="calc-tab" onclick="switchCalc('hra')">HRA Exemption</button>
+    <button class="calc-tab" onclick="switchCalc('emi')">EMI</button>
+  </div>
+
+  <!-- Income Tax -->
+  <div class="calc-panel active fade-up" id="calc-income">
+    <h3>Income Tax Calculator</h3>
+    <p>Estimate your income tax liability for FY 2025-26 (AY 2026-27) under the new tax regime.</p>
+    <div class="calc-fields">
+      <div class="field-group">
+        <label>Annual Income (₹)</label>
+        <input type="number" id="it-income" placeholder="e.g. 1200000">
+      </div>
+      <div class="field-group">
+        <label>Age Group</label>
+        <select id="it-age">
+          <option value="below60">Below 60 years</option>
+          <option value="60to80">60–80 years (Senior)</option>
+          <option value="above80">Above 80 (Super Senior)</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Tax Regime</label>
+        <select id="it-regime">
+          <option value="new">New Regime (Default)</option>
+          <option value="old">Old Regime</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Deductions under 80C (₹) – Old Regime</label>
+        <input type="number" id="it-80c" placeholder="Max ₹1,50,000">
+      </div>
+    </div>
+    	
+  <!-- GST -->
+  <div class="calc-panel" id="calc-gst">
+    <h3>GST Calculator</h3>
+    <p>Calculate GST amount for any taxable value across standard GST slabs.</p>
+    <div class="calc-fields">
+      <div class="field-group">
+        <label>Amount (₹)</label>
+        <input type="number" id="gst-amount" placeholder="Enter amount">
+      </div>
+      <div class="field-group">
+        <label>GST Rate</label>
+        <select id="gst-rate">
+          <option value="5">5% – Essential goods</option>
+          <option value="12">12% – Standard goods</option>
+          <option value="18" selected>18% – Services / Standard</option>
+          <option value="28">28% – Luxury / demerit</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Calculation Type</label>
+        <select id="gst-type">
+          <option value="exclusive">Add GST to amount</option>
+          <option value="inclusive">Extract GST from amount</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calcGST()">Calculate GST →</button>
+    <div class="calc-result" id="gst-result">
+      <div class="label">GST Breakdown</div>
+      <div class="result-amount" id="gst-total">₹0</div>
+      <div class="result-breakdown" id="gst-breakdown"></div>
+    </div>
+  </div>
+
+  <!-- HRA -->
+  <div class="calc-panel" id="calc-hra">
+    <h3>HRA Exemption Calculator</h3>
+    <p>Calculate your House Rent Allowance exemption under Section 10(13A) of Income Tax Act.</p>
+    <div class="calc-fields">
+      <div class="field-group">
+        <label>Basic Salary (Annual ₹)</label>
+        <input type="number" id="hra-basic" placeholder="e.g. 600000">
+      </div>
+      <div class="field-group">
+        <label>HRA Received (Annual ₹)</label>
+        <input type="number" id="hra-received" placeholder="e.g. 240000">
+      </div>
+      <div class="field-group">
+        <label>Rent Paid (Annual ₹)</label>
+        <input type="number" id="hra-rent" placeholder="e.g. 300000">
+      </div>
+      <div class="field-group">
+        <label>City</label>
+        <select id="hra-city">
+          <option value="metro">Metro (Delhi/Mumbai/Kolkata/Chennai)</option>
+          <option value="nonmetro" selected>Non-Metro (Bangalore etc.)</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calcHRA()">Calculate HRA →</button>
+    <div class="calc-result" id="hra-result">
+      <div class="label">HRA Exemption</div>
+      <div class="result-amount" id="hra-total">₹0</div>
+      <div class="result-breakdown" id="hra-breakdown"></div>
+    </div>
+  </div>
+
+  <!-- EMI -->
+  <div class="calc-panel" id="calc-emi">
+    <h3>EMI Calculator</h3>
+    <p>Calculate your monthly EMI for home loans, business loans or any fixed loan.</p>
+    <div class="calc-fields">
+      <div class="field-group">
+        <label>Loan Amount (₹)</label>
+        <input type="number" id="emi-principal" placeholder="e.g. 5000000">
+      </div>
+      <div class="field-group">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="emi-rate" placeholder="e.g. 8.5" step="0.1">
+      </div>
+      <div class="field-group">
+        <label>Loan Tenure (Years)</label>
+        <input type="number" id="emi-years" placeholder="e.g. 20">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calcEMI()">Calculate EMI →</button>
+    <div class="calc-result" id="emi-result">
+      <div class="label">Monthly EMI</div>
+      <div class="result-amount" id="emi-total">₹0</div>
+      <div class="result-breakdown" id="emi-breakdown"></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="appointment-grid">
+    <div class="appt-info fade-up">
+      <div class="label">Book Consultation</div>
+      <h2>Schedule Your <em>Free</em> Consultation</h2>
+      <p>Speak with R. Praveen Kumar directly about your tax, GST, or financial needs. We offer flexible appointments at our Mahadevapura office or via phone call.</p>
+      <div class="appt-steps">
+        <div class="appt-step"><div class="step-num">1</div><p>Select your service and preferred date</p></div>
+        <div class="appt-step"><div class="step-num">2</div><p>Fill in your contact details</p></div>
+        <div class="appt-step"><div class="step-num">3</div><p>Submit and we'll confirm within 24 hours</p></div>
+        <div class="appt-step"><div class="step-num">4</div><p>Attend your consultation – in-person or on call</p></div>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem;background:var(--black-card);border:1px solid var(--border);border-radius:4px;">
+        <div class="label" style="margin-bottom:0.6rem">Direct Contact</div>
+        <p style="color:var(--white);font-size:1.1rem;margin-bottom:0.4rem;">📞 <a href="tel:+917353953396" style="color:var(--gold);text-decoration:none;">+91 73539 53396</a></p>
+        <p style="color:var(--white-dim);font-size:0.82rem;">✉️ rpkassociates07@gmail.com</p>
+      </div>
+    </div>
+    <div class="appt-form fade-up" id="apptFormWrap">
+      <div id="apptFormFields">
+        <div class="label" style="margin-bottom:1rem">Appointment Request</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="appt-name" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="appt-phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="appt-email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label>Service Required *</label>
+            <select id="appt-service">
+              <option value="">Select service...</option>
+              <option>Audit & Assurance</option>
+              <option>Income Tax / ITR Filing</option>
+              <option>GST Registration / Filing</option>
+              <option>Accounting Services</option>
+              <option>Business Registration</option>
+              <option>Financial Advisory</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="appt-date">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select id="appt-time">
+              <option value="">Select time...</option>
+              <option>9:00 AM – 10:00 AM</option>
+              <option>10:00 AM – 11:00 AM</option>
+              <option>11:00 AM – 12:00 PM</option>
+              <option>2:00 PM – 3:00 PM</option>
+              <option>3:00 PM – 4:00 PM</option>
+              <option>4:00 PM – 5:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row single">
+          <div class="form-group">
+            <label>Message / Description</label>
+            <textarea id="appt-message" placeholder="Briefly describe your requirement..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitAppointment()">Request Appointment →</button>
+      </div>
+      <div class="form-success" id="apptSuccess">
+        <div class="checkmark">✅</div>
+        <h3>Request Received!</h3>
+        <p>Thank you! We'll contact you within 24 hours to confirm your appointment.<br><br>
+        For urgent queries, call us directly at <a href="tel:+917353953396" style="color:var(--gold)">+91 73539 53396</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-header fade-up">
+    <div class="label">Tax Updates & Insights</div>
+    <h2>Stay Informed on <em>Tax Laws</em></h2>
+    <p>Expert articles on the latest income tax rules, GST updates, and financial planning tips for Bangalore businesses.</p>
+  </div>
+  <div class="blog-grid fade-up">
+    <div class="blog-card">
+      <div class="blog-date">March 2026 · Income Tax</div>
+      <h3>New Income Tax Rules 2026 – What Changes for You</h3>
+      <p>The Union Budget 2026 brought significant changes to tax slabs under the new regime. Here's a complete breakdown of what's new and how it affects your tax planning.</p>
+      <div class="blog-read">Read Article <span>→</span></div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">February 2026 · Tax Saving</div>
+      <h3>How to Maximize Tax Savings under Section 80C</h3>
+      <p>Section 80C allows deductions up to ₹1.5 lakh. Discover the best investment instruments – PPF, ELSS, NSC, and more – to reduce your taxable income this year.</p>
+      <div class="blog-read">Read Article <span>→</span></div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">January 2026 · GST</div>
+      <h3>GST Filing Guide for Small Businesses in Bangalore</h3>
+      <p>A step-by-step guide to GSTR-1, GSTR-3B and annual return filing for small business owners. Avoid penalties with timely compliance.</p>
+      <div class="blog-read">Read Article <span>→</span></div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">December 2025 · Business</div>
+      <h3>MSME Registration Benefits – Why Every Small Business Should Register</h3>
+      <p>MSME registration opens doors to government subsidies, priority lending, and protection under the MSMED Act. Here's everything you need to know.</p>
+      <div class="blog-read">Read Article <span>→</span></div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">November 2025 · Compliance</div>
+      <h3>Top 7 Common Tax Filing Mistakes and How to Avoid Them</h3>
+      <p>From mismatching Form 26AS to missing investment declarations, these common errors can cost you money and attract IT scrutiny. Learn how to file clean.</p>
+      <div class="blog-read">Read Article <span>→</span></div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">October 2025 · Planning</div>
+      <h3>Business Tax Planning Tips for FY 2025-26</h3>
+      <p>Smart tax planning isn't just about saving money – it's about building a sustainable financial structure. These strategies help businesses in Bangalore minimize their tax burden legally.</p>
+      <div class="blog-read">Read Article <span>→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <div class="label">About RPK Associates</div>
+      <h2>A Firm Built on <em>Trust</em> and Expertise</h2>
+      <p>RPK Associates is a Bangalore-based Audit and Tax consulting firm specializing in taxation, audit, GST compliance, and business advisory. Founded by R. Praveen Kumar, the firm has built its reputation on delivering accurate, timely, and personalized financial services to clients across industries.</p>
+      <p>We work with startups, established businesses, salaried individuals, and NRIs to ensure they remain fully compliant while optimizing their financial position. Our approach is hands-on – we don't assign junior staff to handle complex matters; every engagement receives senior-level attention.</p>
+      <p>Located in the bustling Mahadevapura business district of Bangalore, we serve clients from across the city and are well-versed in the specific compliance needs of IT sector employees, technology startups, and e-commerce businesses concentrated in this corridor.</p>
+      <div class="about-mission">
+        <p>"Our mission is to make professional financial guidance accessible to every individual and business – not just large corporations. When you work with RPK Associates, you work with people who genuinely care about your financial wellbeing."</p>
+      </div>
+      <p style="margin-top:1rem;font-size:0.82rem;color:var(--white-dim);">— R. Praveen Kumar, Proprietor</p>
+    </div>
+    <div class="fade-up">
+      <div class="about-card">
+        <div class="about-avatar">PK</div>
+        <div class="about-name">R. Praveen Kumar</div>
+        <div class="about-title">Proprietor · Audit and Tax Consultant</div>
+        <div class="about-desc">An accomplished Audit and Tax consultant with deep expertise in direct and indirect taxation, audit, and financial advisory. Praveen Kumar has guided hundreds of clients through complex regulatory landscapes with precision and care.</div>
+        <div class="about-credentials">
+          <div class="cred-item"><span>✦</span><span>Tax consultant</span></div>
+          <div class="cred-item"><span>✦</span><span>Income Tax & GST Practitioner</span></div>
+          <div class="cred-item"><span>✦</span><span>Registered Auditor</span></div>
+          <div class="cred-item"><span>✦</span><span>Business Registration Expert</span></div>
+          <div class="cred-item"><span>✦</span><span>5+ Years Practice in Bangalore</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT PORTAL -->
+<section id="portal">
+  <div class="section-header fade-up">
+    <div class="label">Client Portal</div>
+    <h2>Secure Document <em>Upload</em></h2>
+    <p>Submit your documents securely without the hassle of WhatsApp or email. Your files are handled with complete confidentiality.</p>
+  </div>
+  <div class="portal-container fade-up">
+    <div class="portal-header">
+      <div class="portal-icon">🔐</div>
+      <div>
+        <h3>RPK Associates – Client Portal</h3>
+        <p>Upload your financial documents securely for processing</p>
+      </div>
+    </div>
+    <div class="portal-login" id="portalUpload">
+      <p>Upload your documents below. Please include your name and contact number in the message field so we can match the documents to your case.</p>
+      <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+        <input type="file" id="fileInput" multiple onchange="handleFileUpload(event)">
+        <div class="upload-icon">📁</div>
+        <h4>Drop files here or click to browse</h4>
+        <p>Supports PDF, JPG, PNG, Excel – Max 10MB per file</p>
+      </div>
+      <div class="label" style="margin-bottom:0.6rem">Accepted Document Types</div>
+      <div class="doc-types">
+        <span class="doc-type-tag">PAN Card</span>
+        <span class="doc-type-tag">Aadhaar Card</span>
+        <span class="doc-type-tag">Form 16</span>
+        <span class="doc-type-tag">Bank Statements</span>
+        <span class="doc-type-tag">ITR Copy</span>
+        <span class="doc-type-tag">GST Documents</span>
+        <span class="doc-type-tag">Invoices</span>
+        <span class="doc-type-tag">Financial Statements</span>
+        <span class="doc-type-tag">TDS Certificates</span>
+        <span class="doc-type-tag">Property Documents</span>
+      </div>
+      <div class="form-row" style="margin-bottom:1rem;">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" id="portal-name" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="portal-phone" placeholder="+91 XXXXX XXXXX">
+        </div>
+      </div>
+      <div class="form-row single" style="margin-bottom:1rem;">
+        <div class="form-group">
+          <label>Notes / Instructions</label>
+          <textarea id="portal-notes" placeholder="Describe the documents or any instructions for our team..."></textarea>
+        </div>
+      </div>
+      <div id="uploadedList" class="uploaded-list" style="display:none">
+        <div class="label" style="margin-bottom:0.4rem">Selected Files</div>
+      </div>
+      <button class="form-submit" style="margin-top:1rem" onclick="submitPortal()">Submit Documents →</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <div class="label">Get In Touch</div>
+      <h2>Visit or <em>Contact</em> Us</h2>
+      <p>Our office is conveniently located in Mahadevapura, Bangalore. Walk in or book an appointment for a personal consultation.</p>
+      <div class="contact-items">
+        <a href="tel:+917353953396" class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <div class="contact-label">Phone</div>
+            <p>+91 73539 53396</p>
+            <small>Mon–Sat, 9 AM – 6 PM</small>
+          </div>
+        </a>
+        <a href="mailto:rpkassociates07@gmail.com" class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-item-text">
+            <div class="contact-label">Email</div>
+            <p>rpkassociates07@gmail.com</p>
+            <small>We respond within 24 hours</small>
+          </div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <div class="contact-label">Office Address</div>
+            <p>306, Propulsive Passion</p>
+            <small>4th Cross, Mahadevapura, Bangalore – 560016</small>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6825!2d77.6964!3d12.9929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1154b8000001%3A0x3bae1154b8000001!2sMahadevapura%2C%20Bengaluru%2C%20Karnataka%20560016!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+    <div class="contact-form-wrap fade-up" id="contactFormWrap">
+      <h3>Send a Message</h3>
+      <p>Have a question? Fill in the form and we'll get back to you promptly.</p>
+      <div id="contactFormFields">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name *</label>
+            <input type="text" id="c-name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" id="c-phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-row single" style="margin-bottom:1rem">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="c-email" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="form-row single" style="margin-bottom:1rem">
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea id="c-message" placeholder="How can we help you?" style="min-height:120px"></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitContact()">Send Message →</button>
+      </div>
+      <div class="form-success" id="contactSuccess">
+        <div class="checkmark">✅</div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. We'll respond within 24 business hours.<br><br>
+        For urgent matters: <a href="tel:+917353953396" style="color:var(--gold)">+91 73539 53396</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="label">Start Today</div>
+  <h2>Ready to Simplify Your <em>Tax & Finance</em>?</h2>
+  <p>Join hundreds of businesses and individuals who trust RPK Associates for accurate, reliable, and professional financial services in Bangalore.</p>
+  <div class="cta-actions">
+    <a href="#appointment" class="btn-primary">📅 Book Free Consultation</a>
+    <a href="tel:+917353953396" class="btn-outline">📞 Call Now</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+        <div class="logo-mark">R</div>
+        <div class="logo-text">
+          <span class="logo-name">RPK Associates</span>
+          <span class="logo-sub">Auditors & Tax Consultants</span>
+        </div>
+      </div>
+      <p>Professional Audit and Tax consultancy services in Bangalore. Expert tax, GST, audit, and financial advisory for individuals and businesses.</p>
+      <div style="display:flex;gap:0.8rem;margin-top:1rem">
+        <a href="https://wa.me/917353953396" style="width:36px;height:36px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem">💬</a>
+        <a href="mailto:rpkassociates07@gmail.com" style="width:36px;height:36px;background:var(--black-mid);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem">✉️</a>
+        <a href="tel:+917353953396" style="width:36px;height:36px;background:var(--black-mid);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem">📞</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Audit & Assurance</a></li>
+        <li><a href="#services">Income Tax Filing</a></li>
+        <li><a href="#services">GST Compliance</a></li>
+        <li><a href="#services">Accounting</a></li>
+        <li><a href="#services">Business Registration</a></li>
+        <li><a href="#services">Financial Advisory</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#calculators">Tax Calculators</a></li>
+        <li><a href="#blog">Tax Updates</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+        <li><a href="#portal">Client Portal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact">
+        <div class="footer-contact-item"><span>📞</span><span>+91 73539 53396</span></div>
+        <div class="footer-contact-item"><span>✉️</span><span>rpkassociates07@gmail.com</span></div>
+        <div class="footer-contact-item"><span>📍</span><span>306, Propulsive Passion, 4th Cross, Mahadevapura, Bangalore – 560016</span></div>
+        <div class="footer-contact-item"><span>🕐</span><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 RPK Associates. All rights reserved. | Mahadevapura, Bangalore</span>
+    <span>GST Consultant · Tax Advisor · Auditor Bangalore</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/917353953396?text=Hello%20RPK%20Associates%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="whatsapp-btn">
+  <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+  💬
+</a>
+
+<script>
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  const progress = document.getElementById('scrollProgress');
+  const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  progress.style.width = scrollPct + '%';
+  nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
+});
+
+// HAMBURGER
+function toggleMenu() {
+  const menu = document.getElementById('mobileNav');
+  menu.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+// SCROLL ANIMATIONS
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+fadeEls.forEach(el => observer.observe(el));
+
+// CALCULATORS
+function switchCalc(id) {
+  document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('calc-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function fmt(n) {
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+function calcIncomeTax() {
+  const income = parseFloat(document.getElementById('it-income').value) || 0;
+  const regime = document.getElementById('it-regime').value;
+  const deductions = Math.min(parseFloat(document.getElementById('it-80c').value) || 0, 150000);
+  let taxable = income;
+  let tax = 0;
+  let breakdown = [];
+
+  if (regime === 'new') {
+    // New Regime FY 2025-26
+    if (taxable <= 700000) { tax = 0; breakdown.push(['Standard Deduction', '₹75,000']); }
+    taxable = Math.max(0, income - 75000);
+    const slabs = [[300000,0],[400000,0.05],[300000,0.10],[300000,0.15],[300000,0.20],[Infinity,0.30]];
+    let rem = taxable; let t = 0;
+    for (const [limit, rate] of slabs) {
+      if (rem <= 0) break;
+      const taxable_in_slab = Math.min(rem, limit);
+      const slab_tax = taxable_in_slab * rate;
+      t += slab_tax;
+      if (rate > 0) breakdown.push([`Slab @${rate*100}% on ${fmt(taxable_in_slab)}`, fmt(slab_tax)]);
+      rem -= taxable_in_slab;
+    }
+    tax = t;
+    if (income <= 700000) { tax = 0; breakdown = [['No Tax (Income ≤ ₹7L, New Regime 2026)', '₹0']]; }
+  } else {
+    // Old Regime
+    taxable = Math.max(0, income - deductions - 50000);
+    if (taxable <= 250000) tax = 0;
+    else if (taxable <= 500000) { tax = (taxable - 250000) * 0.05; breakdown.push(['5% on ₹2.5L–₹5L slab', fmt(tax)]); }
+    else if (taxable <= 1000000) { tax = 12500 + (taxable - 500000) * 0.20; breakdown.push(['₹12,500 + 20% on ₹5L–₹10L', fmt(tax)]); }
+    else { tax = 112500 + (taxable - 1000000) * 0.30; breakdown.push(['₹1,12,500 + 30% above ₹10L', fmt(tax)]); }
+    if (income <= 500000) { tax = 0; breakdown = [['Rebate u/s 87A – No Tax Payable', '₹0']]; }
+  }
+
+  const cess = tax * 0.04;
+  const total = tax + cess;
+  breakdown.push(['Health & Education Cess @4%', fmt(cess)]);
+  breakdown.push(['Total Tax Payable', fmt(total)]);
+
+  document.getElementById('it-total').textContent = fmt(total);
+  const el = document.getElementById('it-breakdown');
+  el.innerHTML = breakdown.map(([l,v]) => `<div class="result-row"><span>${l}</span><span>${v}</span></div>`).join('');
+  document.getElementById('it-result').classList.add('show');
+}
+
+function calcGST() {
+  const amount = parseFloat(document.getElementById('gst-amount').value) || 0;
+  const rate = parseFloat(document.getElementById('gst-rate').value) / 100;
+  const type = document.getElementById('gst-type').value;
+  let base, gst, total;
+
+  if (type === 'exclusive') {
+    base = amount; gst = amount * rate; total = amount + gst;
+  } else {
+    total = amount; base = amount / (1 + rate); gst = total - base;
+  }
+
+  const cgst = gst / 2; const sgst = gst / 2;
+  document.getElementById('gst-total').textContent = fmt(type === 'exclusive' ? total : gst);
+  document.getElementById('gst-breakdown').innerHTML = [
+    ['Base Amount', fmt(base)],
+    [`CGST @${(rate/2*100).toFixed(1)}%`, fmt(cgst)],
+    [`SGST @${(rate/2*100).toFixed(1)}%`, fmt(sgst)],
+    ['Total GST', fmt(gst)],
+    ['Total Amount (incl. GST)', fmt(total)]
+  ].map(([l,v]) => `<div class="result-row"><span>${l}</span><span>${v}</span></div>`).join('');
+  document.getElementById('gst-result').classList.add('show');
+}
+
+function calcHRA() {
+  const basic = parseFloat(document.getElementById('hra-basic').value) || 0;
+  const received = parseFloat(document.getElementById('hra-received').value) || 0;
+  const rent = parseFloat(document.getElementById('hra-rent').value) || 0;
+  const city = document.getElementById('hra-city').value;
+  const pct = city === 'metro' ? 0.50 : 0.40;
+
+  const method1 = received;
+  const method2 = pct * basic;
+  const method3 = Math.max(0, rent - 0.10 * basic);
+  const exemption = Math.min(method1, method2, method3);
+
+  document.getElementById('hra-total').textContent = fmt(exemption);
+  document.getElementById('hra-breakdown').innerHTML = [
+    ['HRA Received', fmt(method1)],
+    [`${pct*100}% of Basic Salary`, fmt(method2)],
+    ['Rent Paid – 10% of Basic', fmt(method3)],
+    ['HRA Exemption (lowest of 3)', fmt(exemption)],
+    ['Taxable HRA', fmt(received - exemption)]
+  ].map(([l,v]) => `<div class="result-row"><span>${l}</span><span>${v}</span></div>`).join('');
+  document.getElementById('hra-result').classList.add('show');
+}
+
+function calcEMI() {
+  const p = parseFloat(document.getElementById('emi-principal').value) || 0;
+  const r = (parseFloat(document.getElementById('emi-rate').value) || 0) / 12 / 100;
+  const n = (parseFloat(document.getElementById('emi-years').value) || 0) * 12;
+  if (!p || !r || !n) return;
+  const emi = p * r * Math.pow(1+r,n) / (Math.pow(1+r,n) - 1);
+  const total = emi * n;
+  const interest = total - p;
+
+  document.getElementById('emi-total').textContent = fmt(emi);
+  document.getElementById('emi-breakdown').innerHTML = [
+    ['Principal Amount', fmt(p)],
+    ['Total Interest Payable', fmt(interest)],
+    ['Total Amount Payable', fmt(total)],
+    ['Loan Tenure', `${n} months`],
+    ['Monthly EMI', fmt(emi)]
+  ].map(([l,v]) => `<div class="result-row"><span>${l}</span><span>${v}</span></div>`).join('');
+  document.getElementById('emi-result').classList.add('show');
+}
+
+// FORMS
+function submitAppointment() {
+  const name = document.getElementById('appt-name').value.trim();
+  const phone = document.getElementById('appt-phone').value.trim();
+  const service = document.getElementById('appt-service').value;
+  if (!name || !phone || !service) { alert('Please fill in Name, Phone, and Service fields.'); return; }
+  document.getElementById('apptFormFields').style.display = 'none';
+  document.getElementById('apptSuccess').classList.add('show');
+  // In production: send to backend or email service
+}
+
+function submitContact() {
+  const name = document.getElementById('c-name').value.trim();
+  const phone = document.getElementById('c-phone').value.trim();
+  const msg = document.getElementById('c-message').value.trim();
+  if (!name || !phone || !msg) { alert('Please fill in Name, Phone, and Message.'); return; }
+  document.getElementById('contactFormFields').style.display = 'none';
+  document.getElementById('contactSuccess').classList.add('show');
+}
+
+function handleFileUpload(event) {
+  const files = event.target.files;
+  const list = document.getElementById('uploadedList');
+  list.style.display = 'block';
+  list.innerHTML = '<div class="label" style="margin-bottom:0.4rem">Selected Files</div>';
+  Array.from(files).forEach(f => {
+    const item = document.createElement('div');
+    item.className = 'uploaded-item';
+    item.innerHTML = `<span class="file-name">📄 ${f.name}</span><span style="color:var(--gold);font-size:0.75rem">${(f.size/1024).toFixed(0)} KB</span>`;
+    list.appendChild(item);
+  });
+}
+
+function submitPortal() {
+  const name = document.getElementById('portal-name').value.trim();
+  const phone = document.getElementById('portal-phone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  const files = document.getElementById('fileInput').files;
+  if (files.length === 0) { alert('Please select at least one file to upload.'); return; }
+  alert(`✅ Documents submitted successfully!\n\nWe've received ${files.length} file(s) from ${name}.\nOur team will contact you at ${phone} within 24 hours.`);
+}
+</script>
+</body>
+</html>
