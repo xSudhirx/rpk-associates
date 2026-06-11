@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { computeIncomeTax, formatInr } from './incomeTax.js';
+import { submitWeb3Form } from './web3forms.js';
 
 const API = '';
 
@@ -191,24 +192,20 @@ export default function App() {
     }
     setApptBusy(true);
     try {
-      const res = await fetch(`${API}/api/appointments`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: appt.name.trim(),
-          phone: appt.phone.trim(),
-          email: appt.email.trim() || undefined,
-          service: appt.service.trim(),
-          preferredDate: appt.date || undefined,
-          preferredTime: appt.time || undefined,
-          message: appt.message.trim() || undefined,
-        }),
+      await submitWeb3Form({
+        subject: 'New Appointment Request - RPK Associates Website',
+        name: appt.name.trim(),
+        email: appt.email.trim() || 'not provided',
+        phone: appt.phone.trim(),
+        service: appt.service.trim(),
+        date: appt.date || 'not specified',
+        preferred_time: appt.time || 'not specified',
+        message: appt.message.trim() || 'none',
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || 'Request failed');
+      setAppt({ name: '', phone: '', email: '', service: '', date: '', time: '', message: '' });
       setApptOk(true);
-    } catch (err) {
-      setApptErr(err.message || 'Could not reach server. Is the API running?');
+    } catch {
+      setApptErr('Something went wrong. Please try again or call us directly.');
     } finally {
       setApptBusy(false);
     }
@@ -223,21 +220,17 @@ export default function App() {
     }
     setContactBusy(true);
     try {
-      const res = await fetch(`${API}/api/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: contact.name.trim(),
-          phone: contact.phone.trim(),
-          email: contact.email.trim() || undefined,
-          message: contact.message.trim(),
-        }),
+      await submitWeb3Form({
+        subject: 'New Contact Form Submission - RPK Associates Website',
+        name: contact.name.trim(),
+        email: contact.email.trim() || 'not provided',
+        phone: contact.phone.trim(),
+        message: contact.message.trim(),
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || 'Request failed');
+      setContact({ name: '', phone: '', email: '', message: '' });
       setContactOk(true);
-    } catch (err) {
-      setContactErr(err.message || 'Could not reach server.');
+    } catch {
+      setContactErr('Something went wrong. Please try again or call us directly.');
     } finally {
       setContactBusy(false);
     }
@@ -609,7 +602,7 @@ export default function App() {
               <div className="form-success show">
                 <div className="checkmark">✅</div>
                 <h3>Request Received!</h3>
-                <p>Thank you! We will contact you within 24 hours to confirm your appointment.<br /><br />
+                <p>Appointment request received! We&apos;ll confirm your slot within 24 hours.<br /><br />
                   For urgent queries, call <a href="tel:+917353953396" style={{ color: 'var(--gold)' }}>+91 73539 53396</a></p>
               </div>
             )}
@@ -758,7 +751,7 @@ export default function App() {
               <div className="form-success show">
                 <div className="checkmark">✅</div>
                 <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We will respond within 24 business hours.<br /><br />
+                <p>Thank you! We&apos;ll get back to you within 24 hours.<br /><br />
                   Urgent: <a href="tel:+917353953396" style={{ color: 'var(--gold)' }}>+91 73539 53396</a></p>
               </div>
             )}

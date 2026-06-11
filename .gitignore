@@ -4,3 +4,7 @@ server/data/
 server/uploads/
 *.log
 .DS_Store
+.env
+.env.*
+!.env.example
+client/.env

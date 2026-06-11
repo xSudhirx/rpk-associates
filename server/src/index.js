@@ -33,39 +33,6 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, service: 'RPK Associates API' });
 });
 
-app.post('/api/appointments', (req, res) => {
-  const { name, phone, email, service, preferredDate, preferredTime, message } = req.body || {};
-  if (!name?.trim() || !phone?.trim() || !service?.trim()) {
-    return res.status(400).json({ error: 'Name, phone, and service are required.' });
-  }
-  const stmt = db.prepare(`
-    INSERT INTO appointments (name, phone, email, service, preferred_date, preferred_time, message)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `);
-  const info = stmt.run(
-    name.trim(),
-    phone.trim(),
-    email?.trim() || null,
-    service.trim(),
-    preferredDate || null,
-    preferredTime || null,
-    message?.trim() || null
-  );
-  res.status(201).json({ id: info.lastInsertRowid, message: 'Appointment request saved.' });
-});
-
-app.post('/api/contact', (req, res) => {
-  const { name, phone, email, message } = req.body || {};
-  if (!name?.trim() || !phone?.trim() || !message?.trim()) {
-    return res.status(400).json({ error: 'Name, phone, and message are required.' });
-  }
-  const stmt = db.prepare(`
-    INSERT INTO contacts (name, phone, email, message) VALUES (?, ?, ?, ?)
-  `);
-  const info = stmt.run(name.trim(), phone.trim(), email?.trim() || null, message.trim());
-  res.status(201).json({ id: info.lastInsertRowid, message: 'Message saved.' });
-});
-
 app.post('/api/documents', upload.array('files', 12), (req, res) => {
   const name = req.body?.name?.trim();
   const phone = req.body?.phone?.trim();
