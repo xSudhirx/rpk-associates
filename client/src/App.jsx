@@ -602,7 +602,7 @@ export default function App() {
               <div className="form-success show">
                 <div className="checkmark">✅</div>
                 <h3>Request Received!</h3>
-                <p>Appointment request received! We&apos;ll confirm your slot within 24 hours.<br /><br />
+                <p>Thank you! We will contact you within 24 hours to confirm your appointment.<br /><br />
                   For urgent queries, call <a href="tel:+917353953396" style={{ color: 'var(--gold)' }}>+91 73539 53396</a></p>
               </div>
             )}
@@ -751,7 +751,7 @@ export default function App() {
               <div className="form-success show">
                 <div className="checkmark">✅</div>
                 <h3>Message Sent!</h3>
-                <p>Thank you! We&apos;ll get back to you within 24 hours.<br /><br />
+                <p>Thank you for reaching out. We will respond within 24 business hours.<br /><br />
                   Urgent: <a href="tel:+917353953396" style={{ color: 'var(--gold)' }}>+91 73539 53396</a></p>
               </div>
             )}
